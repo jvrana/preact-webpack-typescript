@@ -33,6 +33,7 @@
   ],
   "scripts": {
     "dev": "yarn clean && webpack --config ./webpack.config.js --mode development",
+    "build": "yarn clean && webpack --config ./webpack.config.js --mode production --progress",
     "start": "webpack server --config ./webpack.config.js --mode development --host 0.0.0.0",
     "clean": "rimraf ./dist"
   }
