@@ -111,7 +111,7 @@ module.exports = (env, args) => {
                     }
                 ]
             })
-        ]
+        ],
     };
 
     if (isProduction) {
