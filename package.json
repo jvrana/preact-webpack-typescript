@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "bootstrap": "5.1.0",
+    "depcheck": "^1.4.2",
     "preact": "^10.5.14",
-    "preact-render-to-string": "^5.1.19",
     "preact-router": "^3.2.1",
-    "react-bootstrap": "^2.0.0-beta.6"
+    "react-bootstrap": "^2.0.0-beta.6",
+    "react-flow-renderer": "^9.6.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
     "@storybook/addon-links": "^6.3.8",
@@ -15,7 +15,6 @@
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
-    "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.1",
     "core-js": "^3.17.2",
     "css-loader": "^6.2.0",

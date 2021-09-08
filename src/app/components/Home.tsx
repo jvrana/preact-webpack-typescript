@@ -1,6 +1,7 @@
 /** @jsx h */
 import {Component, h, JSX} from 'preact';
-import Alert from 'react-bootstrap/Alert';
+import {NavigationBar} from './NavBar';
+import OverviewFlow from './Flow';
 
 export interface HomeProps {
     title: string
@@ -9,6 +10,14 @@ export interface HomeProps {
 interface HomeState {
     title: string
 }
+
+
+const elements = [
+    { id: '1', type: 'input', data: { label: 'Node 1' }, position: { x: 250, y: 5 } },
+    // you can also pass a React Node as a label
+    { id: '2', data: { label: <div>Node 2</div> }, position: { x: 100, y: 100 } },
+    { id: 'e1-2', source: '1', target: '2', animated: true },
+];
 
 export class Home extends Component<HomeProps, HomeState> {
 
@@ -30,41 +39,14 @@ export class Home extends Component<HomeProps, HomeState> {
         }, 2000);
     }
 
+
     render(): JSX.Element {
-        return <div class={'jumbotron'}>
-            <h1 class={'display-4'}>Jumbo</h1>
-            <p class={'lead'}>ok</p>
-            <Alert>sdfsdf</Alert>
+        return <div>
+            <NavigationBar></NavigationBar>;
+            <div style={{height: 500}}>
+                <OverviewFlow></OverviewFlow>
+            </div>
         </div>;
-        // <div className={'home-page'}>
-        //     <h1>{props.title}</h1>
-        //     <p>
-        //         {state.title}
-        //     </p>
-        //     <Counter/>
-        //     <h2>Under the hood</h2>
-        //     <ul>
-        //         <li><a href='https://preactjs.com/'>Preact</a></li>
-        //         <li><a href='https://www.typescriptlang.org/'>Typescript</a></li>
-        //         <li><a href='https://webpack.js.org/'>Webpack 5</a></li>
-        //         <li><a href='http://lesscss.org/'>LESS 4</a></li>
-        //     </ul>
-        //     <h3>A react bootstrap button</h3>
-        //     <p>
-        //         Initial idea - <a href='https://dominicstpierre.com/how-to-start-with-typescript-and-preact-a9ea3e0ba4dc'>
-        //         Dominic St-Pierre [Medium]</a>. Thanks a lot!
-        //     </p>
-        //     <div>
-        //         <h4>Other features</h4>
-        //         <p>
-        //             Link to pages:
-        //             <ul>
-        //                 <li><a href='/page'>Page</a></li>
-        //                 <li><a href='/page/nested'>Nested page</a></li>
-        //             </ul>
-        //         </p>
-        //     </div>
-        // </div>;
     }
 }
 

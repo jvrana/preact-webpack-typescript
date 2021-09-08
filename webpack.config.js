@@ -13,12 +13,16 @@ module.exports = (env, args) => {
 
     const config = {
         resolve: {
+            modules: [
+                path.resolve(__dirname, 'node_modules'),
+                'node_modules'
+            ],
+            extensions: ['', '.jsx', '.scss', '.js', '.json', '.tsx', '.ts'],
             alias: {
-                "react": "preact/compat",
-                "react-dom/test-utils": "preact/test-utils",
-                "react-dom": "preact/compat",     // Must be below test-utils
-                "react/jsx-runtime": "preact/jsx-runtime"
-            },
+                'react': 'preact/compat',
+                'react-dom': 'preact/compat',
+                'react-addons-css-transition-group': 'rc-css-transition-group'
+            }
         },
         entry: {
             'scripts/main': path.resolve('./src/index.tsx'),
@@ -41,24 +45,22 @@ module.exports = (env, args) => {
                 },
             },
         },
-        resolve: {
-            extensions: ['.ts', '.tsx', '.js', '.html', '.txt']
-        },
+
         module: {
             rules: [
-                {
-                    test: /\.(ts|tsx)$/,
-                    // eslint
-                    enforce: 'pre',
-                    use: [
-                        {
-                            options: {
-                                eslintPath: require.resolve('eslint'),
-                            },
-                            loader: require.resolve('eslint-loader'),
-                        }
-                    ]
-                },
+                // {
+                //     test: /\.(ts|tsx)$/,
+                //     // eslint
+                //     enforce: 'pre',
+                //     use: [
+                //         {
+                //             options: {
+                //                 eslintPath: require.resolve('eslint'),
+                //             },
+                //             loader: require.resolve('eslint-loader'),
+                //         }
+                //     ]
+                // },
                 {
                     test: /\.tsx?$/,
                     exclude: /node_modules/,
