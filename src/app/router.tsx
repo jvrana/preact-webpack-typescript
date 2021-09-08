@@ -1,7 +1,7 @@
 import {h, JSX} from 'preact';
-import {DefaultHome} from './components/home/Home';
-import {Nested} from './components/nested/Nested';
-import {Page} from './components/page/Page';
+import {DefaultHome} from './components/Home';
+import {Nested} from './components/Nested';
+import {Page} from './components/Page';
 import {NotFound} from './NotFound';
 
 

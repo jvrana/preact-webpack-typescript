@@ -1,3 +1,4 @@
+import 'preact/debug';
 import {Component, JSX} from 'preact';
 import {router} from './router';
 

@@ -12,6 +12,14 @@ module.exports = (env, args) => {
     console.log('');
 
     const config = {
+        resolve: {
+            alias: {
+                "react": "preact/compat",
+                "react-dom/test-utils": "preact/test-utils",
+                "react-dom": "preact/compat",     // Must be below test-utils
+                "react/jsx-runtime": "preact/jsx-runtime"
+            },
+        },
         entry: {
             'scripts/main': path.resolve('./src/index.tsx'),
         },
@@ -19,7 +27,7 @@ module.exports = (env, args) => {
             path: path.resolve('./dist')
         },
         target: 'web',
-        devtool: isProduction ? false : 'source-map',
+        devtool: 'source-map',
         optimization: {
             splitChunks: {
                 // always create vendor.js
@@ -70,6 +78,13 @@ module.exports = (env, args) => {
                         "css-loader",
                         // Compiles Sass to CSS
                         "sass-loader"
+                    ]
+                },
+                {
+                    test: /\.css$/i,
+                    use: [
+                        "style-loader",
+                        "css-loader"
                     ]
                 }
             ]
